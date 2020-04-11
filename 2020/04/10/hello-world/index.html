@@ -233,16 +233,32 @@
               <div class="comments" id="comments">
                 
                 
-  <script defer src="https://utteranc.es/client.js"
-          repo="git@github.com:wdkGitHub/wdkGitHub.github.io.git"
-          issue-term="local"
-  
-          label="utterances"
-    
-          theme="github-light"
-          crossorigin="anonymous"
-  >
+  <div id="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="https://cdn.staticfile.org/valine/1.3.10/Valine.min.js" ></script>
+
+  <script type="text/javascript">
+    var notify = 'true' === 'true';
+    var verify = 'true' === 'true';
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "dp6Lu1Osv7APQaRrihxp7M5k-gzGzoHsz",
+        app_key: "S9HvhbV84DMdGslkhxAj4kcs",
+        placeholder: "说点什么",
+        avatar: "/retro",
+        meta: ["nick","mail","link"],
+        pageSize: "10",
+      });
+    };
   </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
 
 
               </div>
