@@ -175,6 +175,67 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/" target="_self">
+          <img src="/images/cover.jpg" srcset="/img/loading.gif" alt="svn迁移git">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/">svn迁移git</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/">
+          
+          
+            
+          
+          #git仓库迁移
+
+将svn转移到git并保留提交记录
+
+
+1.确定svn所有用户
+svn log --xml | grep author | sort -u | perl -pe 's/.*&gt;(.*?)&lt;.*/$1 = /' &gt;user.txt
+
+示例：svn=git&lt;email&gt;wangdekun = wangdekun&lt;dekun555@163.co&gt
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-07-31 16:18" pubdate>
+              2020-07-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Git/">Git</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Git/">Git</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/19/Oracle%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6/" target="_self">
           <img src="/images/cover.jpg" srcset="/img/loading.gif" alt="Oracle不可见字符">
         </a>
