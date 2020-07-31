@@ -1,7 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -27,7 +27,7 @@
 
   
     
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/github-gist.min.css" />
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
   
 
   
@@ -35,7 +35,7 @@
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
 
 
 
@@ -48,6 +48,7 @@
 
 
   <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 
@@ -130,8 +131,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -144,7 +151,7 @@
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fade-in-up">
+          <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
               
             </span>
@@ -153,8 +160,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-04-19 17:23">
-      星期日, 四月 19日 2020, 5:23 下午
+    <time datetime="2020-04-19 17:23" pubdate>
+      2020年4月19日 下午
     </time>
   </div>
 
@@ -210,15 +217,17 @@
     <div class="col-lg-8 nopadding-md">
       <div class="container nopadding-md" id="board-ctn">
         <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Oracle不可见字符</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：星期日, 四月 19日 2020, 5:26 下午
+                  本文最后更新于：2020年4月19日 下午
                 
               </p>
             
-            <article class="markdown-body">
+            <div class="markdown-body" id="post-body">
               <h1 id="Oracle-不可见字符处理"><a href="#Oracle-不可见字符处理" class="headerlink" title="Oracle 不可见字符处理"></a>Oracle 不可见字符处理</h1><h2 id="1、处理过程"><a href="#1、处理过程" class="headerlink" title="1、处理过程"></a>1、处理过程</h2><ul>
 <li>表结构</li>
 </ul>
@@ -750,7 +759,7 @@ length ：可选的，要返回的内部表示的长度。</code></pre></li>
 </tr>
 </tbody></table>
 
-            </article>
+            </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
@@ -776,21 +785,21 @@ length ：可选的，要返回的内部表示的长度。</code></pre></li>
               
               
                 <div class="post-prevnext row">
-                  <div class="post-prev col-6">
+                  <article class="post-prev col-6">
                     
                     
-                  </div>
-                  <div class="post-next col-6">
+                  </article>
+                  <article class="post-next col-6">
                     
                     
-                  </div>
+                  </article>
                 </div>
               
             </div>
 
             
               <!-- Comments -->
-              <div class="comments" id="comments">
+              <article class="comments" id="comments">
                 
                 
   <div id="vcomments"></div>
@@ -813,15 +822,15 @@ length ：可选的，要返回的内部表示的长度。</code></pre></li>
         });
       });
     }
-    createObserver(loadValine, 'vcomments');
+    waitElementVisible('vcomments', loadValine);
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
       powered by Valine.</a></noscript>
 
 
-              </div>
+              </article>
             
-          </div>
+          </article>
         </div>
       </div>
     </div>
@@ -974,7 +983,7 @@ length ：可选的，要返回的内部表示的长度。</code></pre></li>
 
       tocbot.init({
         tocSelector: '#tocbot',
-        contentSelector: 'article.markdown-body',
+        contentSelector: '#post-body',
         headingSelector: 'h1,h2,h3,h4,h5,h6',
         linkClass: 'tocbot-link',
         activeLinkClass: 'tocbot-active-link',
@@ -1085,6 +1094,8 @@ length ：可选的，要返回的内部表示的长度。</code></pre></li>
         s.parentNode.insertBefore(hm, s);
       })();
     </script>
+  
+
   
 
   

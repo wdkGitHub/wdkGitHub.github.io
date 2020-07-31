@@ -1,7 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -25,7 +25,7 @@
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
 
 
 
@@ -38,6 +38,7 @@
 
 
   <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 
@@ -120,8 +121,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -134,7 +141,7 @@
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.1)">
-          <div class="container text-center white-text fade-in-up">
+          <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
               
             </span>
@@ -173,15 +180,18 @@
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/19/Oracle%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6/">Oracle不可见字符</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/04/19/Oracle%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6/">Oracle不可见字符</a>
+      </h1>
 
-      <a href="/2020/04/19/Oracle%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/04/19/Oracle%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6/">
           
-        
-        <div>Oracle 不可见字符处理1、处理过程
+          
+            
+          
+          Oracle 不可见字符处理1、处理过程
 表结构
 
 create table telphone_temp_20190821(
@@ -191,13 +201,17 @@ create table telphone_temp_20190821(
 
 查询数据，确定Ascii值
 
-select ROWNUM||'#'||trim(telnum)||'#'||lengthb(telnum)||'#'|| dump(telnum) from telphone_temp</div>
-      </a>
+select ROWNUM||'#'||trim(telnum)||'#'||lengthb(telnum)||'#'|| dump(telnum) from telphone_temp
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-19
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-04-19 17:23" pubdate>
+              2020-04-19
+            </time>
           </div>
         
         
@@ -217,7 +231,7 @@ select ROWNUM||'#'||trim(telnum)||'#'||lengthb(telnum)||'#'|| dump(telnum) from 
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
 
@@ -418,6 +432,8 @@ select ROWNUM||'#'||trim(telnum)||'#'||lengthb(telnum)||'#'|| dump(telnum) from 
         s.parentNode.insertBefore(hm, s);
       })();
     </script>
+  
+
   
 
   
