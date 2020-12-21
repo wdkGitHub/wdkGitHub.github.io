@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Failure to find net.sf.json-lib:json-lib:jar:JDK15:</title>
+    <link href="/2020/12/21/net-sf-json-lib-json-lib-jar-JDK15/"/>
+    <url>/2020/12/21/net-sf-json-lib-json-lib-jar-JDK15/</url>
+    
+    <content type="html"><![CDATA[<p>Mac 系统报错：Failure to find net.sf.json-lib:json-lib:jar:JDK15:</p><pre><code class="hljs sql">[ERROR] Failed to <span class="hljs-keyword">execute</span> goal <span class="hljs-keyword">on</span> <span class="hljs-keyword">project</span> BI: Could <span class="hljs-keyword">not</span> resolve dependencies <span class="hljs-keyword">for</span> <span class="hljs-keyword">project</span> ******* : <span class="hljs-keyword">Failure</span> <span class="hljs-keyword">to</span> find net.sf.json-lib:<span class="hljs-keyword">json</span>-lib:jar:JDK15:<span class="hljs-number">2.4</span> <span class="hljs-keyword">in</span> https://repo.maven.apache.org/maven2 was cached <span class="hljs-keyword">in</span> the <span class="hljs-keyword">local</span> repository, resolution will <span class="hljs-keyword">not</span> be reattempted <span class="hljs-keyword">until</span> the <span class="hljs-keyword">update</span> <span class="hljs-built_in">interval</span> <span class="hljs-keyword">of</span> central has elapsed <span class="hljs-keyword">or</span> updates <span class="hljs-keyword">are</span> forced -&gt; [<span class="hljs-keyword">Help</span> <span class="hljs-number">1</span>][<span class="hljs-keyword">ERROR</span>] [<span class="hljs-keyword">ERROR</span>] <span class="hljs-keyword">To</span> see the <span class="hljs-keyword">full</span> stack <span class="hljs-keyword">trace</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">errors</span>, re-run Maven <span class="hljs-keyword">with</span> the -e switch.[<span class="hljs-keyword">ERROR</span>] Re-run Maven <span class="hljs-keyword">using</span> the -X <span class="hljs-keyword">switch</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">enable</span> <span class="hljs-keyword">full</span> debug logging.[<span class="hljs-keyword">ERROR</span>] [<span class="hljs-keyword">ERROR</span>] <span class="hljs-keyword">For</span> more information about the <span class="hljs-keyword">errors</span> <span class="hljs-keyword">and</span> possible solutions, please <span class="hljs-keyword">read</span> the <span class="hljs-keyword">following</span> articles:[<span class="hljs-keyword">ERROR</span>] [<span class="hljs-keyword">Help</span> <span class="hljs-number">1</span>] <span class="hljs-keyword">http</span>://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException</code></pre><p>解决方式：修改Pom文件，<code>&lt;classifier&gt;JDK15&lt;/classifier&gt;</code> 为值修改为小写<code>&lt;classifier&gt;jdk15&lt;/classifier&gt;</code> 则可以正常下载jar包，大小写自测只影响第一次下载，自行决定是否保留修改。</p><pre><code class="hljs crystal">&lt;dependency&gt;   &lt;groupId&gt;net.sf.json-<span class="hljs-class"><span class="hljs-keyword">lib</span>&lt;/<span class="hljs-title">groupId</span>&gt;</span>   &lt;artifactId&gt;json-<span class="hljs-class"><span class="hljs-keyword">lib</span>&lt;/<span class="hljs-title">artifactId</span>&gt;</span>   &lt;version&gt;<span class="hljs-number">2.4</span>&lt;<span class="hljs-regexp">/version&gt;</span><span class="hljs-regexp">   &lt;classifier&gt;JDK15&lt;/classifier</span>&gt;   &lt;exclusions&gt;       &lt;exclusion&gt;       &lt;<span class="hljs-regexp">/exclusion&gt;</span><span class="hljs-regexp">   &lt;/exclusions</span>&gt;&lt;<span class="hljs-regexp">/dependency&gt;</span></code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Maven</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+      <tag>Maven</tag>
+      
+      <tag>net.sf.json-lib</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>svn迁移git</title>
     <link href="/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/"/>
     <url>/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/</url>
