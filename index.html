@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="浮生若梦，世事无常，独醉梦一场。">
   <meta name="author" content="Wang Dekun">
-  <meta name="keywords" content="wangdekun wdk dekun">
+  <meta name="keywords" content="wangdekun wdk dekun 行走在0与1之间">
   
   <title>行走在0与1之间</title>
 
@@ -40,11 +40,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -81,9 +81,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
               </a>
             </li>
           
@@ -105,9 +105,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -117,9 +117,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
               </a>
             </li>
           
@@ -181,7 +181,7 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/12/21/net-sf-json-lib-json-lib-jar-JDK15/" target="_self">
-          <img src="/images/default-post-index.png" srcset="/images/loading.gif" lazyload alt="Failure to find net.sf.json-lib:json-lib:jar:JDK15:">
+          <img src="/images/default-post-index.png" alt="Failure to find net.sf.json-lib:json-lib:jar:JDK15:">
         </a>
       </div>
     
@@ -200,7 +200,7 @@
             
           
           Mac 系统报错：Failure to find net.sf.json-lib:json-lib:jar:JDK15:
-1234567[ERROR] Failed to execute goal on project BI: Could not resolve dependencies for project ******* : Failure to find net.sf.json-lib:j
+12345678[ERROR] Failed to execute goal on project BI: Could not resolve dependencies for project ******* : Failure to find net.sf.json-lib:
         </a>
       </p>
 
@@ -242,7 +242,7 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/" target="_self">
-          <img src="/images/default-post-index.png" srcset="/images/loading.gif" lazyload alt="svn迁移git">
+          <img src="/images/default-post-index.png" alt="svn迁移git">
         </a>
       </div>
     
@@ -266,9 +266,9 @@
 
 
 1.确定svn所有用户
-1svn log --xml | grep author | sort -u | perl -pe 's/.*&gt;(.*?)&lt;.*/$1 = /' &gt;user.txt
+1svn log --xml | grep author | sort -u | perl -pe &#x27;s/.*&gt;(.*?)&lt;.*/$1 = /&#x27; &gt;user.txt
 
-示例：svn=git&lt;email&gt;wangdekun = wangdekun&lt;dekun555@163.co&g
+示例：svn=git&lt;email&gt;wangdekun = wangdekun&lt;dekun55
         </a>
       </p>
 
@@ -306,7 +306,7 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/19/Oracle%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6/" target="_self">
-          <img src="/images/default-post-index.png" srcset="/images/loading.gif" lazyload alt="Oracle不可见字符">
+          <img src="/images/default-post-index.png" alt="Oracle不可见字符">
         </a>
       </div>
     
@@ -332,7 +332,7 @@
 
 查询数据，确定Ascii值
 
-1select ROWNUM||'#'||trim(telnum)||'#'||lengthb(telnum)||'#'|| dump(telnum) from telphone_te
+1select ROWNUM||&#x27;#&#x27;||trim(telnum)||&#x27;#&#x27;||lengthb(telnum)||&#x27;#&#x27;||
         </a>
       </p>
 
@@ -411,7 +411,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     
   </div>
   
   <div class="statistics">
@@ -468,7 +468,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    
   
 
 

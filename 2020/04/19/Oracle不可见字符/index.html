@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="浮生若梦，世事无常，独醉梦一场。">
   <meta name="author" content="Wang Dekun">
-  <meta name="keywords" content="wangdekun wdk dekun">
+  <meta name="keywords" content="wangdekun wdk dekun 行走在0与1之间">
   
   <title>Oracle不可见字符 - 行走在0与1之间</title>
 
@@ -56,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -97,9 +97,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
               </a>
             </li>
           
@@ -121,9 +121,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -133,9 +133,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
               </a>
             </li>
           
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      894 字
+      916 字
     </span>
   
 
@@ -201,6 +201,14 @@
   
 
   
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
   
 </div>
 
@@ -227,28 +235,34 @@
             <!-- SEO header -->
             <h1 style="display: none">Oracle不可见字符</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2020年11月26日 上午
+                
+              </p>
+            
             <div class="markdown-body">
               <h1 id="Oracle-不可见字符处理"><a href="#Oracle-不可见字符处理" class="headerlink" title="Oracle 不可见字符处理"></a>Oracle 不可见字符处理</h1><h2 id="1、处理过程"><a href="#1、处理过程" class="headerlink" title="1、处理过程"></a>1、处理过程</h2><ul>
 <li>表结构</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> telphone_temp_20190821(<br>    telnum <span class="hljs-built_in">varchar2</span>(<span class="hljs-number">32</span>)<br>);<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> telphone_temp_20190821(<br>    telnum varchar2(<span class="hljs-number">32</span>)<br>);<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>查询数据，确定Ascii值</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> <span class="hljs-keyword">ROWNUM</span>||<span class="hljs-string">'#'</span>||<span class="hljs-keyword">trim</span>(telnum)||<span class="hljs-string">'#'</span>||lengthb(telnum)||<span class="hljs-string">'#'</span>|| dump(telnum) <span class="hljs-keyword">from</span> telphone_temp_20190821 <span class="hljs-keyword">where</span>  <span class="hljs-keyword">ROWNUM</span> &lt;<span class="hljs-number">3</span>;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> ROWNUM<span class="hljs-operator">||</span><span class="hljs-string">&#x27;#&#x27;</span><span class="hljs-operator">||</span><span class="hljs-built_in">trim</span>(telnum)<span class="hljs-operator">||</span><span class="hljs-string">&#x27;#&#x27;</span><span class="hljs-operator">||</span>lengthb(telnum)<span class="hljs-operator">||</span><span class="hljs-string">&#x27;#&#x27;</span><span class="hljs-operator">||</span> dump(telnum) <span class="hljs-keyword">from</span> telphone_temp_20190821 <span class="hljs-keyword">where</span>  ROWNUM <span class="hljs-operator">&lt;</span><span class="hljs-number">3</span>;<br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL">ROWNUM||'<span class="hljs-comment">#'||TRIM(TELNUM)||'#'||LENGTHB(TELNUM)||'#'||DUMP(TELNUM)</span><br><span class="hljs-comment">-----------------------------------------------------------------</span><br>1<span class="hljs-comment">#              146           #17#Typ=1 Len=17: 9,9,49,52,54,9,9</span><br>2<span class="hljs-comment">#              144           #15#Typ=1 Len=15: 9,9,49,52,52,9,9</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL">ROWNUM<span class="hljs-operator">||</span><span class="hljs-string">&#x27;#&#x27;</span><span class="hljs-operator">||</span><span class="hljs-built_in">TRIM</span>(TELNUM)<span class="hljs-operator">||</span><span class="hljs-string">&#x27;#&#x27;</span><span class="hljs-operator">||</span>LENGTHB(TELNUM)<span class="hljs-operator">||</span><span class="hljs-string">&#x27;#&#x27;</span><span class="hljs-operator">||</span>DUMP(TELNUM)<br><span class="hljs-comment">-----------------------------------------------------------------</span><br><span class="hljs-number">1</span>#              <span class="hljs-number">146</span>           #<span class="hljs-number">17</span>#Typ<span class="hljs-operator">=</span><span class="hljs-number">1</span> Len<span class="hljs-operator">=</span><span class="hljs-number">17</span>: <span class="hljs-number">9</span>,<span class="hljs-number">9</span>,<span class="hljs-number">49</span>,<span class="hljs-number">52</span>,<span class="hljs-number">54</span>,<span class="hljs-number">9</span>,<span class="hljs-number">9</span><br><span class="hljs-number">2</span>#              <span class="hljs-number">144</span>           #<span class="hljs-number">15</span>#Typ<span class="hljs-operator">=</span><span class="hljs-number">1</span> Len<span class="hljs-operator">=</span><span class="hljs-number">15</span>: <span class="hljs-number">9</span>,<span class="hljs-number">9</span>,<span class="hljs-number">49</span>,<span class="hljs-number">52</span>,<span class="hljs-number">52</span>,<span class="hljs-number">9</span>,<span class="hljs-number">9</span><br><br></code></pre></div></td></tr></table></figure>
 
 <blockquote>
 <p>不可见字符 ascii值等于9</p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">chr</span>(<span class="hljs-number">9</span>) <span class="hljs-keyword">from</span> dual;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> chr(<span class="hljs-number">9</span>) <span class="hljs-keyword">from</span> dual;<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>replace剔除不可见字符，利用<code>chr()</code>函数将数值转换成<strong><em>不可见</em></strong>字符</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> <span class="hljs-keyword">replace</span>(telnum, <span class="hljs-keyword">chr</span>(<span class="hljs-number">9</span>), <span class="hljs-string">''</span>) <span class="hljs-keyword">from</span> telphone_temp_20190821 <span class="hljs-keyword">where</span> <span class="hljs-keyword">ROWNUM</span> &lt;<span class="hljs-number">3</span>;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> replace(telnum, chr(<span class="hljs-number">9</span>), <span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-keyword">from</span> telphone_temp_20190821 <span class="hljs-keyword">where</span> ROWNUM <span class="hljs-operator">&lt;</span><span class="hljs-number">3</span>;<br></code></pre></div></td></tr></table></figure>
 
 <h2 id="2、Oracle-函数"><a href="#2、Oracle-函数" class="headerlink" title="2、Oracle 函数"></a>2、Oracle 函数</h2><ul>
 <li><p><code>dump(expression [, return_format] [, start_position] [, length] )</code></p>
@@ -271,7 +285,7 @@ length ：可选的，要返回的内部表示的长度。</code></pre></div></l
     ● 每个字符的 Ascii值</code></pre></div><ul>
 <li><code>lengthb()</code>：返回的是 字节数</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> <span class="hljs-keyword">length</span>(<span class="hljs-string">'Oracle'</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">6</span><br><span class="hljs-keyword">select</span> lengthb(<span class="hljs-string">'Oracle'</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">6</span><br><span class="hljs-keyword">select</span> <span class="hljs-keyword">length</span>(<span class="hljs-string">'甲骨文'</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">3</span><br><span class="hljs-keyword">select</span> lengthb(<span class="hljs-string">'甲骨文'</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">6</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> length(<span class="hljs-string">&#x27;Oracle&#x27;</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">6</span><br><span class="hljs-keyword">select</span> lengthb(<span class="hljs-string">&#x27;Oracle&#x27;</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">6</span><br><span class="hljs-keyword">select</span> length(<span class="hljs-string">&#x27;甲骨文&#x27;</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">3</span><br><span class="hljs-keyword">select</span> lengthb(<span class="hljs-string">&#x27;甲骨文&#x27;</span>) <span class="hljs-keyword">from</span> dual<br>结果：<span class="hljs-number">6</span><br></code></pre></div></td></tr></table></figure>
 <ul>
 <li><code>length()</code> ：返回的是 字符数 </li>
 <li><code>trim()</code> ：函数从字符串的开头，结尾或两端删除空格或指定的字符。</li>
@@ -771,7 +785,7 @@ length ：可选的，要返回的内部表示的长度。</code></pre></div></l
               
                 <p class="note note-warning">
                   
-                    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                   
                 </p>
               
@@ -797,7 +811,7 @@ length ：可选的，要返回的内部表示的长度。</code></pre></div></l
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -878,7 +892,7 @@ length ：可选的，要返回的内部表示的长度。</code></pre></div></l
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     
   </div>
   
   <div class="statistics">
@@ -935,7 +949,9 @@ length ：可选的，要返回的内部表示的长度。</code></pre></div></l
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
   
 
 

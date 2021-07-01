@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="浮生若梦，世事无常，独醉梦一场。">
   <meta name="author" content="Wang Dekun">
-  <meta name="keywords" content="wangdekun wdk dekun">
+  <meta name="keywords" content="wangdekun wdk dekun 行走在0与1之间">
   
   <title>Failure to find net.sf.json-lib:json-lib:jar:JDK15: - 行走在0与1之间</title>
 
@@ -56,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -97,9 +97,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
               </a>
             </li>
           
@@ -121,9 +121,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -133,9 +133,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
               </a>
             </li>
           
@@ -202,6 +202,14 @@
 
   
   
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
 </div>
 
             
@@ -227,12 +235,18 @@
             <!-- SEO header -->
             <h1 style="display: none">Failure to find net.sf.json-lib:json-lib:jar:JDK15:</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2020年12月21日 下午
+                
+              </p>
+            
             <div class="markdown-body">
               <p>Mac 系统报错：Failure to find net.sf.json-lib:json-lib:jar:JDK15:</p>
-<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">[ERROR] Failed to <span class="hljs-keyword">execute</span> goal <span class="hljs-keyword">on</span> <span class="hljs-keyword">project</span> BI: Could <span class="hljs-keyword">not</span> resolve dependencies <span class="hljs-keyword">for</span> <span class="hljs-keyword">project</span> ******* : <span class="hljs-keyword">Failure</span> <span class="hljs-keyword">to</span> find net.sf.json-lib:<span class="hljs-keyword">json</span>-lib:jar:JDK15:<span class="hljs-number">2.4</span> <span class="hljs-keyword">in</span> https://repo.maven.apache.org/maven2 was cached <span class="hljs-keyword">in</span> the <span class="hljs-keyword">local</span> repository, resolution will <span class="hljs-keyword">not</span> be reattempted <span class="hljs-keyword">until</span> the <span class="hljs-keyword">update</span> <span class="hljs-built_in">interval</span> <span class="hljs-keyword">of</span> central has elapsed <span class="hljs-keyword">or</span> updates <span class="hljs-keyword">are</span> forced -&gt; [<span class="hljs-keyword">Help</span> <span class="hljs-number">1</span>]<br>[<span class="hljs-keyword">ERROR</span>] <br>[<span class="hljs-keyword">ERROR</span>] <span class="hljs-keyword">To</span> see the <span class="hljs-keyword">full</span> stack <span class="hljs-keyword">trace</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">errors</span>, re-run Maven <span class="hljs-keyword">with</span> the -e switch.<br>[<span class="hljs-keyword">ERROR</span>] Re-run Maven <span class="hljs-keyword">using</span> the -X <span class="hljs-keyword">switch</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">enable</span> <span class="hljs-keyword">full</span> debug logging.<br>[<span class="hljs-keyword">ERROR</span>] <br>[<span class="hljs-keyword">ERROR</span>] <span class="hljs-keyword">For</span> more information about the <span class="hljs-keyword">errors</span> <span class="hljs-keyword">and</span> possible solutions, please <span class="hljs-keyword">read</span> the <span class="hljs-keyword">following</span> articles:<br>[<span class="hljs-keyword">ERROR</span>] [<span class="hljs-keyword">Help</span> <span class="hljs-number">1</span>] <span class="hljs-keyword">http</span>://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stata">[<span class="hljs-keyword">ERROR</span>] Failed to execute goal <span class="hljs-keyword">on</span> project BI: Could not resolve dependencies <span class="hljs-keyword">for</span> project ******* : Failure to find <span class="hljs-keyword">net</span>.sf.json-lib:json-lib:jar:JDK15:2.4 <span class="hljs-keyword">in</span> https:<span class="hljs-comment">//repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -&gt; [Help 1]</span><br>[<span class="hljs-keyword">ERROR</span>] <br>[<span class="hljs-keyword">ERROR</span>] To see the full <span class="hljs-keyword">stack</span> trace of the errors, re-<span class="hljs-keyword">run</span> Maven with the -<span class="hljs-keyword">e</span> switch.<br>[<span class="hljs-keyword">ERROR</span>] Re-<span class="hljs-keyword">run</span> Maven using the -X switch to enable full debug logging.<br>[<span class="hljs-keyword">ERROR</span>] <br>[<span class="hljs-keyword">ERROR</span>] <span class="hljs-keyword">For</span> <span class="hljs-keyword">more</span> information <span class="hljs-keyword">about</span> the errors and possible solutions, please <span class="hljs-keyword">read</span> the following articles:<br>[<span class="hljs-keyword">ERROR</span>] [<span class="hljs-keyword">Help</span> 1] http:<span class="hljs-comment">//cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException</span><br><br></code></pre></div></td></tr></table></figure>
 
 <p>解决方式：修改Pom文件，<code>&lt;classifier&gt;JDK15&lt;/classifier&gt;</code> 为值修改为小写<code>&lt;classifier&gt;jdk15&lt;/classifier&gt;</code> 则可以正常下载jar包，大小写自测只影响第一次下载，自行决定是否保留修改。</p>
-<figure class="highlight crystal"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs crystal">&lt;dependency&gt;<br>   &lt;groupId&gt;net.sf.json-<span class="hljs-class"><span class="hljs-keyword">lib</span>&lt;/<span class="hljs-title">groupId</span>&gt;</span><br>   &lt;artifactId&gt;json-<span class="hljs-class"><span class="hljs-keyword">lib</span>&lt;/<span class="hljs-title">artifactId</span>&gt;</span><br>   &lt;version&gt;<span class="hljs-number">2.4</span>&lt;<span class="hljs-regexp">/version&gt;</span><br><span class="hljs-regexp">   &lt;classifier&gt;JDK15&lt;/classifier</span>&gt;<br>   &lt;exclusions&gt;<br>       &lt;exclusion&gt;<br>       &lt;<span class="hljs-regexp">/exclusion&gt;</span><br><span class="hljs-regexp">   &lt;/exclusions</span>&gt;<br>&lt;<span class="hljs-regexp">/dependency&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.sf.json-lib<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>json-lib<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">classifier</span>&gt;</span>JDK15<span class="hljs-tag">&lt;/<span class="hljs-name">classifier</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">exclusions</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">exclusion</span>&gt;</span><br>       <span class="hljs-tag">&lt;/<span class="hljs-name">exclusion</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">exclusions</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -262,7 +276,7 @@
               
                 <p class="note note-warning">
                   
-                    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                   
                 </p>
               
@@ -288,7 +302,7 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -369,7 +383,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     
   </div>
   
   <div class="statistics">
@@ -426,7 +440,9 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
   
 
 
