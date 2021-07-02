@@ -14,11 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="浮生若梦，世事无常，独醉梦一场。">
+  <meta name="description" content="
+JDBC基础知识
+">
   <meta name="author" content="Wang Dekun">
   <meta name="keywords" content="wangdekun wdk dekun 行走在0与1之间">
   
-  <title>Failure to find net.sf.json-lib:json-lib:jar:JDK15: - 行走在0与1之间</title>
+  <title>JDBC基础知识 - 行走在0与1之间</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Failure to find net.sf.json-lib:json-lib:jar:JDK15:">
+            <span class="h2" id="subtitle" title="JDBC基础知识">
               
             </span>
 
@@ -173,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-21 12:16" pubdate>
-        2020年12月21日 中午
+      <time datetime="2021-07-02 17:31" pubdate>
+        2021年7月2日 下午
       </time>
     </span>
   
@@ -185,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      249 字
+      473 字
     </span>
   
 
@@ -195,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      5
        分钟
     </span>
   
@@ -233,7 +235,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Failure to find net.sf.json-lib:json-lib:jar:JDK15:</h1>
+            <h1 style="display: none">JDBC基础知识</h1>
             
               <p class="note note-info">
                 
@@ -242,11 +244,70 @@
               </p>
             
             <div class="markdown-body">
-              <p>Mac 系统报错：Failure to find net.sf.json-lib:json-lib:jar:JDK15:</p>
-<figure class="highlight stata"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stata">[<span class="hljs-keyword">ERROR</span>] Failed to execute goal <span class="hljs-keyword">on</span> project BI: Could not resolve dependencies <span class="hljs-keyword">for</span> project ******* : Failure to find <span class="hljs-keyword">net</span>.sf.json-lib:json-lib:jar:JDK15:2.4 <span class="hljs-keyword">in</span> https:<span class="hljs-comment">//repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -&gt; [Help 1]</span><br>[<span class="hljs-keyword">ERROR</span>] <br>[<span class="hljs-keyword">ERROR</span>] To see the full <span class="hljs-keyword">stack</span> trace of the errors, re-<span class="hljs-keyword">run</span> Maven with the -<span class="hljs-keyword">e</span> switch.<br>[<span class="hljs-keyword">ERROR</span>] Re-<span class="hljs-keyword">run</span> Maven using the -X switch to enable full debug logging.<br>[<span class="hljs-keyword">ERROR</span>] <br>[<span class="hljs-keyword">ERROR</span>] <span class="hljs-keyword">For</span> <span class="hljs-keyword">more</span> information <span class="hljs-keyword">about</span> the errors and possible solutions, please <span class="hljs-keyword">read</span> the following articles:<br>[<span class="hljs-keyword">ERROR</span>] [<span class="hljs-keyword">Help</span> 1] http:<span class="hljs-comment">//cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException</span><br><br></code></pre></div></td></tr></table></figure>
+              <blockquote>
+<p>JDBC基础知识</p>
+</blockquote>
+<span id="more"></span>
 
-<p>解决方式：修改Pom文件，<code>&lt;classifier&gt;JDK15&lt;/classifier&gt;</code> 为值修改为小写<code>&lt;classifier&gt;jdk15&lt;/classifier&gt;</code> 则可以正常下载jar包，大小写自测只影响第一次下载，自行决定是否保留修改。</p>
-<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.sf.json-lib<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>json-lib<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">classifier</span>&gt;</span>JDK15<span class="hljs-tag">&lt;/<span class="hljs-name">classifier</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">exclusions</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">exclusion</span>&gt;</span><br>       <span class="hljs-tag">&lt;/<span class="hljs-name">exclusion</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">exclusions</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p>#默认 Front-matter</p>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">updated:</span>  <span class="hljs-comment">#更新日期</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">标签1</span>,<span class="hljs-string">标签2</span>]<br><span class="hljs-attr">categories:</span> <span class="hljs-string">分类</span> <br><span class="hljs-attr">index_img:</span> <span class="hljs-string">https://picsum.photos/300/280??random=&#123;&#123;</span> <span class="hljs-string">date</span> <span class="hljs-string">&#125;&#125;</span> <span class="hljs-comment">#首页展示小图片</span><br><span class="hljs-comment">#banner_img: /images/default-post.png  #文章顶部图片 </span><br><span class="hljs-comment">#hide: true  # 是否隐藏文章</span><br><span class="hljs-comment">#sticky: 100  # sticky 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。</span><br><span class="hljs-comment">#excerpt: 这是摘要</span><br><span class="hljs-comment">#math: true  #LaTeX 数学公式</span><br><span class="hljs-comment">#mermaid: true # 流程图</span><br><span class="hljs-attr">typora-copy-images-to:</span> <span class="hljs-string">../mk-images/&#123;&#123;</span> <span class="hljs-string">title</span> <span class="hljs-string">&#125;&#125;</span><br><span class="hljs-attr">typora-root-url:</span> <span class="hljs-string">../</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br></code></pre></div></td></tr></table></figure>
+
+<p>#备注</p>
+<blockquote>
+<p>支持表格、TOC、LaTeX、代码块、任务列表、脚注等。<br>画图库支持 mermaid, viz, echarts, plantuml, sequence, flow。</p>
+</blockquote>
+<ul>
+<li><p>默认自动摘要,若要手动指定摘要    </p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">正文的一部分作为摘要<br>&lt;!-- more --&gt;<br>余下的正文<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>分类</p>
+  <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">categories:<br><span class="hljs-bullet">  -</span> Diary<br><span class="hljs-bullet">  -</span> Life<br></code></pre></div></td></tr></table></figure>
+
+<p>  会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<p>  如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p>
+  <figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">categories:<br><span class="hljs-bullet">- </span>[Diary, PlayStation]<br><span class="hljs-bullet">- </span>[Diary, Games]<br><span class="hljs-bullet">- </span>[Life]<br></code></pre></div></td></tr></table></figure>
+
+<p>  此时这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#latex-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a></p>
+<ul>
+<li>数学公式，开启之前需要更换 Markdown 渲染器，否则复杂公式会有兼容问题，具体请见：<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/##latex-数学公式">https://hexo.fluid-dev.com/docs/guide/##latex-数学公式</a></li>
+<li><strong><em>目前没有更改</em></strong></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#mermaid-%E6%B5%81%E7%A8%8B%E5%9B%BE">Mermaid 流程图</a></p>
+<ul>
+<li>流程图，基于 mermaid-js，具体请见：<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#mermaid-流程图">https://hexo.fluid-dev.com/docs/guide/#mermaid-流程图</a></li>
+<li>主题 <a target="_blank" rel="noopener" href="http://mermaid-js.github.io/mermaid/">http://mermaid-js.github.io/mermaid/</a></li>
+</ul>
+</li>
+<li><p>脚注</p>
+  <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">这是一句话[^1]<br>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">这是对应的脚注</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>表</p>
+<table>
+<thead>
+<tr>
+<th align="left">———  表头1</th>
+<th align="right">——— 表头2</th>
+<th align="center">——— 表头3</th>
+<th>——— 表头4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">左对齐</td>
+<td align="right">右对齐</td>
+<td align="center">中间对齐</td>
+<td>冒号控制对齐</td>
+</tr>
+<tr>
+<td align="left">左对齐</td>
+<td align="right">右对齐</td>
+<td align="center">中间对齐</td>
+<td>默认中间对齐</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -256,7 +317,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Maven/">Maven</a>
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/jdbc/">jdbc</a>
                     
                   </div>
                 
@@ -264,9 +327,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Maven/">Maven</a>
-                    
-                      <a class="hover-with-bg" href="/tags/net-sf-json-lib/">net.sf.json-lib</a>
+                      <a class="hover-with-bg" href="/tags/JDBC/">JDBC</a>
                     
                   </div>
                 
@@ -278,29 +339,6 @@
                   
                 </p>
               
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/07/02/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE-book-java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%B8%80%E7%89%88/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">思维导图-book-java多线程编程核心技术-第一版</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2020/07/31/svn%E8%BF%81%E7%A7%BBgit/">
-                        <span class="hidden-mobile">svn迁移git</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
