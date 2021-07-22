@@ -1,0 +1,964 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon.png">
+  <link rel="icon" href="/images/icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="
+正文的一部分作为摘要
+">
+  <meta name="author" content="Wang Dekun">
+  <meta name="keywords" content="wangdekun wdk dekun 行走在0与1之间">
+  
+  <title>Mysql基础-2 ---『 数据类型 』 - 行走在0与1之间</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.1.0/styles/base16/synth-midnight-terminal-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dekun.wang","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"a0ebaf097c911f6d3c6a2c3c505c99c3","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="行走在0与1之间" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>行走在0与1之间</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+                RSS
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/default-post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Mysql基础-2 ---『 数据类型 』">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-20 11:30" pubdate>
+        2021年7月20日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Mysql基础-2 ---『 数据类型 』</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月22日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>正文的一部分作为摘要</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="Mysql—数据类型"><a href="#Mysql—数据类型" class="headerlink" title="Mysql—数据类型"></a>Mysql—数据类型</h1><h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><table>
+<thead>
+<tr>
+<th align="left">整数类型</th>
+<th align="center">字节</th>
+<th align="left">最小值</th>
+<th align="left">最大值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">tinyint（tiny int）</td>
+<td align="center">1</td>
+<td align="left">有符号 -128 「 $- 2^7$」<br />无符号 0</td>
+<td align="left">有符号 127 「 $ 2^7 -1 $」<br />无符号 255  「 $ 2^8 -1 $」</td>
+</tr>
+<tr>
+<td align="left">smallint （small int）</td>
+<td align="center">2</td>
+<td align="left">有符号 -32768 「 $ - 2^{15}$」<br />无符号 0</td>
+<td align="left">有符号 32767「$2^{15}-1$」<br />无符号 65535 [ $2^{16}-1$ ]</td>
+</tr>
+<tr>
+<td align="left">mediumint (medium int)</td>
+<td align="center">3</td>
+<td align="left">有符号 -8388608 「 $ - 2^{23}$」<br />无符号 0</td>
+<td align="left">有符号 83388607 [ $ 2^{23}-1$ ]<br />无符号 16777215 [ $ 2^{24}-1$]</td>
+</tr>
+<tr>
+<td align="left">int、integer</td>
+<td align="center">4</td>
+<td align="left">有符号 -2147483648 「 $ -2^{31}$ 」<br />无符号 0</td>
+<td align="left">有符号 2147483647 「 $ 2^{31}-1$ 」<br />无符号 4294967295 「 $ 2^{32}-1$ 」</td>
+</tr>
+<tr>
+<td align="left">bitint (big int)</td>
+<td align="center">8</td>
+<td align="left">有符号 -9223372036854775808<br />「 $ -2^{63}$ 」<br />无符号 0</td>
+<td align="left">有符号 9223372036854775807 <br />「 $ 2^{63}-1$ 」<br />无符号 18446744073709551615 <br />「 $ 2^{64}$ 」</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>支持在类型名称后面的小括号内指定 <strong><em>显示宽度</em></strong> ，默认为int(11) 。例： int(5) 表示当数值宽度小于5位时在数字前面填满宽度。 </p>
+<p>配合 zerofill 数字位数不够的空间用字符“0”填满。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t1 (<br>	id <span class="hljs-type">int</span>,<br>  number <span class="hljs-type">int</span>  [unsigned <span class="hljs-operator">|</span> signed] # 默认 有符号 <br>);<br><br><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> t1 modify id <span class="hljs-type">int</span>(<span class="hljs-number">5</span>) zerofill<br># ⭐️ 使用zerofill 自动设置为  unsigned (无符号)<br># ⭐️ 并不会影响精度，按照数据类型实际精度存储。<br><br># 整数类型 属性：auto_increment 开始值<span class="hljs-number">1</span>，每行增加<span class="hljs-number">1.</span> <br><br># ⭐️ 一个表最多只能有一个 auto_increment列，必须定义为 <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span> ，并定义为 <span class="hljs-keyword">primary</span> key 或 <span class="hljs-keyword">unique</span><br><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> ai (id <span class="hljs-type">int</span> auto_increment <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span> <span class="hljs-keyword">primary</span> key);<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> ai (id <span class="hljs-type">int</span> auto_increment <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span> , <span class="hljs-keyword">primary</span> key (id));<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> ai (id <span class="hljs-type">int</span> auto_increment <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span> ,<span class="hljs-keyword">unique</span>(id));<br></code></pre></div></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th align="left">浮点数类型</th>
+<th align="center">字节</th>
+<th>最小值</th>
+<th>最大值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">float</td>
+<td align="center">4</td>
+<td>$\pm1.175494351E-38$</td>
+<td>$\pm3.402823466E+38$</td>
+</tr>
+<tr>
+<td align="left">duble</td>
+<td align="center">8</td>
+<td>$\pm2.2250738585072014E-308$</td>
+<td>$\pm1.7976931348623157E+308$</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">定点数类型</th>
+<th align="center">字节</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">dec(M,D)<br />decimal(M,D)</td>
+<td align="center">M+2</td>
+<td align="center">最大取值范围与duble相同，给定decimal的有效取值范围由M和D决定</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>浮点数、定点数 都可以名称后增加（M,D） M:显示位数（整数+小数） D：小数点后显示D位，保存值四舍五入。</p>
+<p>float(7,4)  显示：-999.9999</p>
+<p>警告⭐️：浮点数后更 （M，D） 非标准用法。</p>
+<p>float/double 不指定精度：默认按照实际精度显示（实际精度操作系统和硬件决定）</p>
+<p>decimal 不指定精度：默认 dec(10,0)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">位类型</th>
+<th align="center">字节</th>
+<th align="left">最小值</th>
+<th>最大值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bit(M) 备注：M是二进制位数，不写默认1</td>
+<td align="center">1~8</td>
+<td align="left">BIT(1)</td>
+<td>BIT(64)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>❗️ 直接使用<code>select</code> 查询 bit类型字段无法显示。</p>
+<p>❗️ 使用 bin( field ) 【显示为二进制格式】或 hex(field)【显示为十六进制格式】 函数进行读取。</p>
+</blockquote>
+<h2 id="日期与时间类型"><a href="#日期与时间类型" class="headerlink" title="日期与时间类型"></a>日期与时间类型</h2><table>
+<thead>
+<tr>
+<th>日期📅和时间⌚️类型</th>
+<th>字节</th>
+<th>最小值</th>
+<th>最大值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>4</td>
+<td>1000-01-01</td>
+<td>9999-12-31</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>8</td>
+<td>1000-01-01 00:00:00</td>
+<td>9999-12-31 23:59:59</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>4</td>
+<td>19700101080001</td>
+<td>2038年的某个时刻</td>
+</tr>
+<tr>
+<td>time</td>
+<td>3</td>
+<td>-838:59:59</td>
+<td>838:59:59</td>
+</tr>
+<tr>
+<td>year</td>
+<td>1</td>
+<td>1901</td>
+<td>2155</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>年月日 ⇒ date</p>
+<p>年月日时分秒 ⇒ date time 或 timestamp 「警告 ⭐️：timestamp与时区有关, 不适合存放比较久远日期『最大值』」</p>
+<p>时分秒 ⇒ time</p>
+<p>年份 ⇒ year    </p>
+<blockquote>
+<p> 比date占用空间少，year含有 2位或4位格式的年，默认 四位格式。</p>
+<p>四位取值范围：1901～2155 和 0000</p>
+<p><del>两位取值范围：70～69  表示：1970～2069 ⭐️ Mysql5.5.27 弃用</del></p>
+</blockquote>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>零0⃣️值表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>datetime</td>
+<td>0000-00-00 00:00:00</td>
+</tr>
+<tr>
+<td>date</td>
+<td>0000-00-00</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>00000000000000 「14个0⃣️」</td>
+</tr>
+<tr>
+<td>time</td>
+<td>00:00:00</td>
+</tr>
+<tr>
+<td>year</td>
+<td>0000</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>❗️timestamp 和系统属性：explicit_defaults_for_timestamp 「 略 」</p>
+<p> datetime 与 timestamp 都可以设置 <code>on update curremt_timestamp</code> ，使得日期列可以随其他列的更新而自动更新为新时间。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 将 explici_defaults_for_timestamp设置 为<span class="hljs-keyword">on</span>，则默认值、<span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span> 和 <span class="hljs-keyword">on</span> update <span class="hljs-built_in">CURRENT_TIMESTAMP</span>属性都❗️不会自动设置。<br><span class="hljs-keyword">set</span> explicit_defaults_for_timestamp<span class="hljs-operator">=</span><span class="hljs-keyword">on</span>;<br># <span class="hljs-number">8.0</span><span class="hljs-number">.2</span>版本之后默认<span class="hljs-keyword">on</span>，之前版本默认off（导致：自动设置<span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span>、默认值 curremt_timestamp ，并设置`<span class="hljs-keyword">on</span> update curremt_timestamp`）<br># 设置为OFF，导致mysql只给表中第一个<span class="hljs-type">timestamp</span>字段设置默认值为系统时间。<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">#查看当前时区<br><span class="hljs-keyword">show</span> variables <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;time_zone&#x27;</span>;<br>#时区值 为 <span class="hljs-keyword">SYSTEM</span> 默认值和主机的时区一致。<br><br># 当前时间<br><span class="hljs-keyword">select</span> now()<br><br>#修改时区为东八区<br><span class="hljs-keyword">set</span> time_zone<span class="hljs-operator">=</span><span class="hljs-string">&#x27;+8:00&#x27;</span><br></code></pre></div></td></tr></table></figure>
+
+<blockquote>
+<p>❗️ timestamp与datetime 区别：</p>
+<ul>
+<li>取值范围 【datetime 取值范围更大，包含timestamp范围内】</li>
+<li>都可以设置默认值和 <code>ON UPDATE CURRENT_TIMESTAMP</code>属性，🚩<strong><em>使得日期列可以随其他列的更新而自动更新为最新时间</em></strong></li>
+<li>timestamp 插入读取受时区影响</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>datetime</p>
+<ul>
+<li><p>YYYY-MM-DD HH:MM:SS 或 YY-MM-DD HH:MM:SS 格式的字符串。分隔符【不严格】语法，可以使任意字符</p>
+<blockquote>
+<p>例如：98/12/31 11*22:11 ⇔ 98-12-31 11:22:11 等同</p>
+<p>​           1979-6-9  ⇔ 1979-06-09 等同</p>
+<p>​            1979-10-30 1:2:3  ⇔ 1979-10-30 01:02:03 等同</p>
+</blockquote>
+</li>
+<li><p>YYYYMMDDHHMMSS 或 YYMMDDHHMMSS 格式没有间隔符</p>
+<blockquote>
+<p>例如：</p>
+<p>​        19970523091528 和 970523091528  ➱ 1997-05-23 09:15:28 （被解释的时间）</p>
+<p>​        971122129015 不合法，因为分钟不合法将被设置为：0000-00-00 00:00:00</p>
+</blockquote>
+</li>
+<li><p>函数返回结果，其值适合 datetime 、date或timestamp 。时间函数： now() 【2021-07-20 17:56:27】 , current_date() 「2021-07-20」</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><table>
+<thead>
+<tr>
+<th>字符串类型</th>
+<th>字节</th>
+<th>描述及存储需求</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char(M)</td>
+<td>M</td>
+<td>M 为0～255  「 $ 2^8 -1 $」之间的整数</td>
+<td>定长字符串</td>
+</tr>
+<tr>
+<td>varchar(M)</td>
+<td></td>
+<td>M 为0～ 65535 [ $2^{16}-1$ ]之间的整数，<strong><em>值的长度+1个字节</em></strong></td>
+<td>变长字符串</td>
+</tr>
+<tr>
+<td>tinyblob</td>
+<td></td>
+<td>允许长度0～255  「 $ 2^8 -1 $」字节，值的长度+1个字节</td>
+<td>不超过 255 个字符的二进制字符串</td>
+</tr>
+<tr>
+<td>blob</td>
+<td></td>
+<td>允许长度0～65535 [ $2^{16}-1$ ]，值的长度+2个字节</td>
+<td>二进制形式的长文本数据</td>
+</tr>
+<tr>
+<td>mediumblob</td>
+<td></td>
+<td>允许长度0～167772150 [ $ (2^{24}-1)\times10$]，值的长度+3个字节</td>
+<td>二进制形式的中等长度文本数据</td>
+</tr>
+<tr>
+<td>longblob</td>
+<td></td>
+<td>允许长度0～4294967295 「 $ 2^{32}-1$ 」，值的长度+4个字节</td>
+<td>二进制形式的极大文本数据</td>
+</tr>
+<tr>
+<td>tinytext</td>
+<td></td>
+<td>允许长度0～255  「 $ 2^8 -1 $」，值的长度+2个字节</td>
+<td>短文本字符串</td>
+</tr>
+<tr>
+<td>text</td>
+<td></td>
+<td>允许长度0～65535 [ $2^{16}-1$ ]，值的长度+2个字节</td>
+<td>长文本数据</td>
+</tr>
+<tr>
+<td>mediumtext</td>
+<td></td>
+<td>允许长度0～167772150 [ $ (2^{24}-1)\times10$]，值的长度+3个字节</td>
+<td>中等长度文本数据</td>
+</tr>
+<tr>
+<td>longtext</td>
+<td></td>
+<td>允许长度0～4294967295 「 $ 2^{32}-1$ 」，值的长度+4个字节</td>
+<td>极大文本数据</td>
+</tr>
+<tr>
+<td>varbinary(M)</td>
+<td></td>
+<td>允许长度0～M个字节的<strong><em>变</em></strong>长字节字符串，值的长度+1个字符</td>
+<td></td>
+</tr>
+<tr>
+<td>binary(M)</td>
+<td>M</td>
+<td>允许长度0～M个字节的<strong><em>定</em></strong>长字节字符串</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="char与varchar-binary和varbinary"><a href="#char与varchar-binary和varbinary" class="headerlink" title="char与varchar / binary和varbinary"></a>char与varchar / binary和varbinary</h2><blockquote>
+<p>binary varbinary 类似char和varchar</p>
+<p>不同点：它们包含二进制字符串而不包含非二进制字符串</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t(c <span class="hljs-type">binary</span>(<span class="hljs-number">3</span>));<br><br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> t  <span class="hljs-keyword">values</span> (<span class="hljs-string">&#x27;a&#x27;</span>);<br># ❗️ 正确语法，网上搜索是用来提高速度<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> t <span class="hljs-keyword">set</span> c<span class="hljs-operator">=</span><span class="hljs-string">&#x27;b&#x27;</span>;<br><br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> , hex(c), c<span class="hljs-operator">=</span><span class="hljs-string">&#x27;a&#x27;</span>,c<span class="hljs-operator">=</span><span class="hljs-string">&#x27;a\0&#x27;</span>,c<span class="hljs-operator">=</span><span class="hljs-string">&#x27;a\0\0&#x27;</span> <span class="hljs-keyword">from</span> t<br># a  <span class="hljs-number">610000</span> flase <span class="hljs-literal">false</span> <span class="hljs-literal">true</span><br>#❗️保存<span class="hljs-type">binary</span>值时，在值最后填充<span class="hljs-string">&#x27;0x00&#x27;</span>(零字节)以达到指定的字段定义长度<br>#  例如：<span class="hljs-type">binary</span>(<span class="hljs-number">3</span>) 插入 <span class="hljs-string">&#x27;a&#x27;</span>变成为<span class="hljs-string">&#x27;a\0\0&#x27;</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="enum类型"><a href="#enum类型" class="headerlink" title="enum类型"></a>enum类型</h2><blockquote>
+<ul>
+<li>1~255     1个字节存储</li>
+<li>255~65535  2个字节存储</li>
+<li>最对允许65535个成员</li>
+</ul>
+</blockquote>
+<p>枚举类型</p>
+<ul>
+<li>忽略大小写</li>
+<li>插入值不在ENUM指定的范围，⭐️ 数字则按照初始化顺序。</li>
+<li>📌 只允许从集合中取一个值。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t(<br>	gender enum(<span class="hljs-string">&#x27;M&#x27;</span>,<span class="hljs-string">&#x27;F&#x27;</span>)  # M F 即是成员，使用时只能使用M或F<br>);<br><br># ⭐️<br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> t <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;M&#x27;</span>),(<span class="hljs-string">&#x27;1&#x27;</span>),(<span class="hljs-string">&#x27;f&#x27;</span>),(<span class="hljs-keyword">null</span>);<br>Query OK, <span class="hljs-number">4</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.01</span> sec)<br>Records: <span class="hljs-number">4</span>  Duplicates: <span class="hljs-number">0</span>  Warnings: <span class="hljs-number">0</span><br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> t;<br><span class="hljs-operator">+</span><span class="hljs-comment">--------+</span><br><span class="hljs-operator">|</span> gender <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">--------+</span><br><span class="hljs-operator">|</span> M      <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> M      <span class="hljs-operator">|</span>  #<span class="hljs-number">1</span> 被替换为 M ,初始化顺序。此例如数字大于<span class="hljs-number">2</span>则报错。<br><span class="hljs-operator">|</span> F      <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> <span class="hljs-keyword">NULL</span>   <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">--------+</span><br><span class="hljs-number">4</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="set类型"><a href="#set类型" class="headerlink" title="set类型"></a>set类型</h2><blockquote>
+<p>set 与enum类型类似，📍 <strong><em>主要区别是set可以选取集合中多个成员</em></strong>。</p>
+</blockquote>
+<p>占用字节</p>
+<ul>
+<li>1～8 成员集合，占用1个字节</li>
+<li>9～16 成员集合，占用2个字节</li>
+<li>17～24成员集合，占用3个字节</li>
+<li>25～32 成员集合，占用4个字节</li>
+<li>33～64成员集合，占用8个字节</li>
+</ul>
+<p>存储注意❗️：</p>
+<ul>
+<li>重复成员仅保留一个</li>
+<li>非集合中成员报错</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t (<br>    col <span class="hljs-keyword">set</span> (<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>)<br>);<br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span>  t <span class="hljs-keyword">values</span> (<span class="hljs-string">&#x27;a,b&#x27;</span>),(<span class="hljs-string">&#x27;a,d,a&#x27;</span>),(<span class="hljs-string">&#x27;a,b&#x27;</span>),(<span class="hljs-string">&#x27;a,c&#x27;</span>),(<span class="hljs-string">&#x27;a&#x27;</span>);<br>Query OK, <span class="hljs-number">5</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.00</span> sec)<br>Records: <span class="hljs-number">5</span>  Duplicates: <span class="hljs-number">0</span>  Warnings: <span class="hljs-number">0</span><br><br>mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> t;<br><span class="hljs-operator">+</span><span class="hljs-comment">------+</span><br><span class="hljs-operator">|</span> col  <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">------+</span><br><span class="hljs-operator">|</span> a,b  <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> a,d  <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> a,b  <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> a,c  <span class="hljs-operator">|</span><br><span class="hljs-operator">|</span> a    <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">------+</span><br><span class="hljs-number">5</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<h2 id="JSON类型"><a href="#JSON类型" class="headerlink" title="JSON类型"></a>JSON类型</h2><blockquote>
+<p>5.7.8版本开始支持JSON数据类型。</p>
+<p>JSON 数据类型，会自动校验JSON格式是否正确。</p>
+<p>json_type() 函数判断JSON数据是什么类型。 例如：<code>select json_type(&quot;abc&quot;) type</code>，结果 type  显示为String类型</p>
+<p>大小写敏感 📌，JSON默认排序规则 utf8mb4_bin 导致。</p>
+<p>📌 常见的 null、true、false必须是小写才合法； <code>select json_valid(&#39;null&#39;) valid</code>  ，判断是否合法。1合法，0 非法。</p>
+<p>警告⭐️： JSON类型，不允许❎设置默认值，最大长度由系统常量    <code>max_allowed_packet</code>控制。该值仅在服务器进行存储的时候进行限制，在内存中进行计算时允许超过该值。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 📌 <span class="hljs-keyword">value</span>含有特殊符号，需使用反斜杠转义<br><br># 方法一：显示插入转义字符<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> t <span class="hljs-keyword">values</span>( <span class="hljs-built_in">json_object</span>(&quot;name&quot;,&quot;ab\&quot;c&quot;));<br><br># 方法二：隐示插入转义字符<br>#  双斜杠 ⭐️<br>insert into t values(&#x27;&#123;&quot;name&quot;,&quot;ab\\&quot;c&quot;&#125;<span class="hljs-string">&#x27;);</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Mysql/">Mysql</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Mysql/%E5%9F%BA%E7%A1%80/">基础</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Mysql/">Mysql</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/21/Mysql%E5%9F%BA%E7%A1%80-3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Mysql基础-3 ---『 运算符 』</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/19/Mysql%E5%9F%BA%E7%A1%80-1/">
+                        <span class="hidden-mobile">Mysql基础-1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"6kJO6EDHOByCjo57BNnIJrsa-gzGzoHsz","appKey":"WWI7wID27nGtjMEOsPg5pEbP","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate" placeholder="请输入.......">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词搜索</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?a0ebaf097c911f6d3c6a2c3c505c99c3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
