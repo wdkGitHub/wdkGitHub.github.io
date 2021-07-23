@@ -244,7 +244,7 @@ Mysql 高频函数
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月22日 下午
+                  本文最后更新于：2021年7月23日 上午
                 
               </p>
             
@@ -883,9 +883,16 @@ Mysql 高频函数
 <ul>
 <li><p>frame_start与frame_end 「非关键字，代指」</p>
 <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 📌 支持如下关键字<br><span class="hljs-keyword">current</span> <span class="hljs-type">row</span> # 边界是当前行，一般和其他范围关键字一起使用<br>unbounded preceding # 边界是分区中的第一行<br>unbounded following # 边界是分区中的最后一行<br>expr preceding 	# 边界是当前行减去expr的值<br>expr following  # 边界是当前行加上expr的值<br><br># 例子<br><br># 窗口范围是 当前行、前一行、后一行一共<span class="hljs-number">3</span>行记录<br><span class="hljs-keyword">rows</span> <span class="hljs-keyword">between</span> <span class="hljs-number">1</span> preceding <span class="hljs-keyword">and</span> <span class="hljs-number">1</span> following<br><br>#当前行到分区中的最后一行<br><span class="hljs-keyword">rows</span> unbounded following<br><br># 当前分区中  所有行，等同于不写<br><span class="hljs-keyword">rows</span> <span class="hljs-keyword">between</span> unbounded  preceding <span class="hljs-keyword">and</span> unbounded following<br></code></pre></div></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>基于范围：<code>range</code> 替换<code>rows</code>，其余类似</p>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 当<span class="hljs-type">interval</span>作为一个关键字时，表示为时间间隔<br><span class="hljs-keyword">range</span> <span class="hljs-type">interval</span> <span class="hljs-number">7</span> <span class="hljs-keyword">day</span> preceding <br></code></pre></div></td></tr></table></figure>
 
 
 
+
+
 </li>
 </ul>
 </li>
@@ -894,9 +901,7 @@ Mysql 高频函数
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<div class="hljs code-wrapper"><pre><code>- 基于范围：`range` 替换`rows`，其余类似</code></pre></div><h3 id="Rank-、-DENSE-RANK"><a href="#Rank-、-DENSE-RANK" class="headerlink" title="Rank()、 DENSE_RANK()"></a>Rank()、 DENSE_RANK()</h3><blockquote>
+<h3 id="Rank-、-DENSE-RANK"><a href="#Rank-、-DENSE-RANK" class="headerlink" title="Rank()、 DENSE_RANK()"></a>Rank()、 DENSE_RANK()</h3><blockquote>
 <p>Rank()、 DENSE_RANK() 与 row_number() 非常相似，<strong><em>在出现重复时处理逻辑不通</em></strong>。</p>
 </blockquote>
 <ul>
