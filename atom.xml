@@ -6,7 +6,7 @@
   <link href="https://blog.dekun.wang/atom.xml" rel="self"/>
   
   <link href="https://blog.dekun.wang/"/>
-  <updated>2023-04-19T09:35:58.502Z</updated>
+  <updated>2022-12-31T16:00:01.000Z</updated>
   <id>https://blog.dekun.wang/</id>
   
   <author>
@@ -17,37 +17,23 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>post</title>
-    <link href="https://blog.dekun.wang/2023/04/19/post/"/>
-    <id>https://blog.dekun.wang/2023/04/19/post/</id>
-    <published>2023-04-19T09:04:41.000Z</published>
-    <updated>2023-04-19T09:35:58.502Z</updated>
+    <title>莫愁千里路    自有东风来</title>
+    <link href="https://blog.dekun.wang/2023/01/01/init/"/>
+    <id>https://blog.dekun.wang/2023/01/01/init/</id>
+    <published>2022-12-31T16:00:00.000Z</published>
+    <updated>2022-12-31T16:00:01.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>正文的一部分作为摘要<br><a href="https://hexo.fluid-dev.com/docs/guide/#关于指南">主题文档</a></p></blockquote><p class="note note-primary"> <a href="https://hexo.fluid-dev.com/docs/guide/#tag-插件">便签</a></p><ul><li>primary</li><li>secondary</li><li>success</li><li>danger</li><li>warning</li><li>info</li><li>light<span id="more"></span></li></ul><p>#默认 Front-matter</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">updated:</span>  <span class="hljs-comment">#更新日期</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">标签1</span>,<span class="hljs-string">标签2</span>]<br><span class="hljs-attr">categories:</span> <span class="hljs-string">分类</span> <br><span class="hljs-attr">index_img:</span> <span class="hljs-string">https://picsum.photos/300/280??random=&#123;&#123;</span> <span class="hljs-string">date</span> <span class="hljs-string">&#125;&#125;</span> <span class="hljs-comment">#首页展示小图片</span><br><span class="hljs-comment">#banner_img: /images/default-post.png  #文章顶部图片 </span><br><span class="hljs-comment">#hide: true  # 是否隐藏文章</span><br><span class="hljs-comment">#sticky: 100  # sticky 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。</span><br><span class="hljs-comment">#excerpt: 这是摘要</span><br><span class="hljs-comment">#math: true  #LaTeX 数学公式</span><br><span class="hljs-comment">#mermaid: true # 流程图</span><br><span class="hljs-attr">typora-copy-images-to:</span> <span class="hljs-string">../mk-images/&#123;&#123;</span> <span class="hljs-string">title</span> <span class="hljs-string">&#125;&#125;</span><br><span class="hljs-attr">typora-root-url:</span> <span class="hljs-string">../</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br></code></pre></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><p>primary</p><p>secondary</p><p>success</p><p>danger</p><p>warning</p><p>info</p><p>light</p><p>#备注</p><blockquote><p>支持表格、TOC、LaTeX、代码块、任务列表、脚注等。<br>画图库支持 mermaid, viz, echarts, plantuml, sequence, flow。</p></blockquote><ul><li><p>默认自动摘要,若要手动指定摘要    </p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">正文的一部分作为摘要<br>&lt;!-- more --&gt;<br>余下的正文<br></code></pre></td></tr></table></figure></li><li><p>分类</p>  <figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">categories</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Life</span><br></code></pre></td></tr></table></figure><p>  会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p><p>  如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p>  <figure class="highlight ldif"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ldif"><span class="hljs-attribute">categories</span>:<br><span class="hljs-literal">-</span> [Diary, PlayStation]<br><span class="hljs-literal">-</span> [Diary, Games]<br><span class="hljs-literal">-</span> [Life]<br></code></pre></td></tr></table></figure><p>  此时这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类。</p></li><li><p><a href="https://hexo.fluid-dev.com/docs/guide/#latex-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a></p><ul><li>数学公式，开启之前需要更换 Markdown 渲染器，否则复杂公式会有兼容问题，具体请见：<a href="https://hexo.fluid-dev.com/docs/guide/##latex-数学公式">https://hexo.fluid-dev.com/docs/guide/##latex-数学公式</a></li><li><strong><em>目前没有更改</em></strong></li></ul></li><li><p><a href="https://hexo.fluid-dev.com/docs/guide/#mermaid-%E6%B5%81%E7%A8%8B%E5%9B%BE">Mermaid 流程图</a></p><ul><li>流程图，基于 mermaid-js，具体请见：<a href="https://hexo.fluid-dev.com/docs/guide/#mermaid-流程图">https://hexo.fluid-dev.com/docs/guide/#mermaid-流程图</a></li><li>主题 <a href="http://mermaid-js.github.io/mermaid/">http://mermaid-js.github.io/mermaid/</a></li></ul></li><li><p>脚注</p>  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">这是一句话[^1]<br>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">这是对应的脚注</span><br></code></pre></td></tr></table></figure></li><li><p>表</p><table><thead><tr><th align="left">———  表头1</th><th align="right">——— 表头2</th><th align="center">——— 表头3</th><th>——— 表头4</th></tr></thead><tbody><tr><td align="left">左对齐</td><td align="right">右对齐</td><td align="center">中间对齐</td><td>冒号控制对齐</td></tr><tr><td align="left">左对齐</td><td align="right">右对齐</td><td align="center">中间对齐</td><td>默认中间对齐</td></tr></tbody></table></li></ul>]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="c8a083fc324f6575b1132af68d5d42b6ca68bca23e529e6edae0a856dfebd482">6a2920ab26b5a373c3ef2a28471bb24bf3463180b58c14e6ecb930f85dab2a57da3110a65939ba60a1395583340d7fad56dbb08a0f65e6639b6575b50aae66b7371b66309efca48ca1b8bcd1b4c1bafb8f85d69278ff05a32146fa8ebaafd528d62546c73742f7ca6b8d7c2935189e9435b7899b824974a72b6d08c485a29025a26f8e63da8d3e541aebd703ba92196f7c170f7fdf7da9b50f782809c5fee5d4500df976575cb5348fbda688e1ae9b4deb5d60c9f987248e46801208b6ac0dfbed34d22dce0982bfe0e3c0cd7909317088196575923869314a7b5b6d46b823552f4efa428a84ef65778ee0336d0a8d57e0ab8f68f99e86060d06e99ff708b59fdf7eac8e7e5ac753575c6fd0a72167cfcba4404bb02848ea2faa51afb60f49b5</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-xray">      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">请输入密码.......</span>      </label>      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>      </svg>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;正文的一部分作为摘要&lt;br&gt;&lt;a href=&quot;https://hexo.fluid-dev.com/docs/guide/#关于指南&quot;&gt;主题文档&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p class=&quot;note note-primary&quot;&gt; &lt;a href=&quot;https://hexo.fluid-dev.com/docs/guide/#tag-插件&quot;&gt;便签&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;primary&lt;/li&gt;
-&lt;li&gt;secondary&lt;/li&gt;
-&lt;li&gt;success&lt;/li&gt;
-&lt;li&gt;danger&lt;/li&gt;
-&lt;li&gt;warning&lt;/li&gt;
-&lt;li&gt;info&lt;/li&gt;
-&lt;li&gt;light</summary>
+    <summary type="html">加密文章</summary>
     
     
     
-    <category term="分类" scheme="https://blog.dekun.wang/categories/%E5%88%86%E7%B1%BB/"/>
+    <category term="cipher" scheme="https://blog.dekun.wang/categories/cipher/"/>
     
     
-    <category term="标签1" scheme="https://blog.dekun.wang/tags/%E6%A0%87%E7%AD%BE1/"/>
-    
-    <category term="标签2" scheme="https://blog.dekun.wang/tags/%E6%A0%87%E7%AD%BE2/"/>
+    <category term="cipher" scheme="https://blog.dekun.wang/tags/cipher/"/>
     
   </entry>
   
