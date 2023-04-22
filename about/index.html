@@ -156,23 +156,31 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-th-large"></i>
+                <span>类别</span>
               </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -342,7 +350,7 @@
     let startDay = Math.ceil(startDate/(24*3600*1000))
     let endDay = Math.ceil(endDate/(24*3600*1000))
 
-    let commitData = {"2023-04-22":17,"2023-04-21":10,"2023-04-20":3,"2023-04-19":2}
+    let commitData = {"2023-04-22":19,"2023-04-21":10,"2023-04-20":3,"2023-04-19":2}
     let seriesData = []
 
     for(let i = startDay;i <= endDay;i++){
